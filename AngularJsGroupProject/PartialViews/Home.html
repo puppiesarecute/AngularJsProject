@@ -4,6 +4,6 @@
         <div uib-tooltip="{{item.volumeInfo.title}}" tooltip-placement="bottom">
             <a href="#"><img class="img-thumbnail" ng-src="{{item.volumeInfo.imageLinks.smallThumbnail || 'Resources/Untitled.png'}}" alt="book" /></a>            
         </div>
-        <div class="btn btn-warning" id="addBookmark">Edit bookmark</div>
+        <div class="btn btn-warning" id="addBookmark" ng-click="editBookmark(item)">Edit bookmark</div>
     </div>
 </div>

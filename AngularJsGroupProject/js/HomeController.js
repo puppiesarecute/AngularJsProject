@@ -7,4 +7,9 @@
                         }).error(function (newResponse) {
                             alert(newResponse);
                         });
+    $scope.editBookmark = function (item) {
+        //alert(item.volumeInfo.title);
+        $state.go("myBookshelves", { bookmarkItem: item });
+        //console.log(item);
+    }
 });

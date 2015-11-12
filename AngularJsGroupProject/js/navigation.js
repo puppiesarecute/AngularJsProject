@@ -9,7 +9,8 @@ bookApp.config(function($stateProvider, $urlRouterProvider) {
         state("myBookshelves", {
             url: "/bookmark",
             templateUrl: "PartialViews/MyBookshelves.html",
-            controller: "myBookShelvesController"
+            controller: "myBookShelvesController",
+            params: { bookmarkItem: null }
         }).
         state("search", {
             url: "/search",
