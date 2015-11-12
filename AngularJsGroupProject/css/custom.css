@@ -247,4 +247,8 @@ hr {
     padding: 0;
 }
 
-
+#addBookmark {
+    margin-top: 0px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+}

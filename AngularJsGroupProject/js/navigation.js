@@ -7,7 +7,7 @@ bookApp.config(function($stateProvider, $urlRouterProvider) {
             controller: "homeController"
         }).
         state("myBookshelves", {
-            url: "/myBookshelves",
+            url: "/bookmark",
             templateUrl: "PartialViews/MyBookshelves.html",
             controller: "myBookShelvesController"
         }).
