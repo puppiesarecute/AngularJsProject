@@ -1,0 +1,64 @@
+﻿
+<form ng-submit="submitSearch()">
+    <div class="container" >
+        <div class="jumbotron text-center">
+            <!--searchbox-->
+            <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
+                <div class="form-group has-feedback has-feedback-left">
+                    <input type="text" class="form-control" placeholder="Search by ISBN number, Book title, Author, Category" ng-model="searchText" name="searchText">
+                    <i class="form-control-feedback glyphicon glyphicon-search"></i>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="panel col-lg-offset-1 col-md-10 col-md-offset-1">        
+        <div ng-show="!show">
+            <h4>No result to display</h4>
+        </div>
+        <div class="panel-default panel-body" ng-show="show" ng-repeat="item in searchResult.items.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
+            <div>
+                <div class="col-lg-2 col-md-3 col-sm-3 col-xs-4">
+                    <img ng-src="{{item.volumeInfo.imageLinks === undefined ? 'Resources/Untitled.png' : item.volumeInfo.imageLinks.thumbnail}}" alt="book" class="img-thumbnail" />
+                </div>
+                <div id="itemContent" class="col-lg-10 col-md-9 col-sm-9 col-xs-8">
+                    <h4>
+                        <a id="link" ng-href="{{item.volumeInfo.infoLink}}">{{item.volumeInfo.title}}</a>
+                    </h4>
+                    <h5>{{item.volumeInfo.industryIdentifiers[0].type}}: {{item.volumeInfo.industryIdentifiers[0].identifier}}</h5>
+                    <h5>{{item.volumeInfo.industryIdentifiers[1].type}}: {{item.volumeInfo.industryIdentifiers[1].identifier}}</h5>
+                    <p>
+                        <strong>Subtitle:</strong> {{ item.volumeInfo.subtitle === undefined ? item.volumeInfo.title : item.volumeInfo.subtitle }} by <span class="label label-success label-space" ng-repeat="author in item.volumeInfo.authors"> {{author}}&nbsp;&nbsp;</span>
+                    </p>
+                    <p>
+                        <strong>Publish:</strong> {{ item.volumeInfo.publisher }}, {{ item.volumeInfo.publishedDate }}
+                    </p>
+                    <p><strong>Category:</strong><span class="label label-info label-space" ng-repeat="cat in item.volumeInfo.categories">{{cat}}</span></p>
+                    <p>
+                        <strong>Description:</strong> {{ item.volumeInfo.description}}
+                    </p>
+                    <p>
+                        <strong>Page count:</strong> {{ item.volumeInfo.pageCount}}
+                    </p>
+                    <p>
+                        <strong>Average rating:</strong> {{item.volumeInfo.averageRating}}
+                    </p>
+                    <div class="btn btn-warning" ng-click="addToLibrary(item)">Add to library</div>
+                </div>
+            </div>
+            <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-6 col-sm-offset-3 col-xs-6 col-sm-offset-3">
+                <hr />
+            </div>        
+        </div>
+    </div>   
+    <div class="panel-none col-lg-offset-1 col-md-10 col-md-offset-1" ng-show="show">
+        <div class="pull-right">
+            <!--<button type="button" class="btn btn-success" ng-click="previous()">Previous</button>
+            <button type="button" class="btn btn-success" ng-click="next()">Next</button>-->
+            <uib-pager id="pagination" total-items="totalItems" ng-model="currentPage" items-per-page="itemsPerPage"></uib-pager>
+        </div>
+        
+    </div> 
+</form>
+

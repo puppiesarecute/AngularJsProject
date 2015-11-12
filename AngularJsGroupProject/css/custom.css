@@ -1,0 +1,250 @@
+﻿html {
+    background: url('../Resources/book.jpg') no-repeat center center fixed;
+    background-size: cover;
+    opacity: 0.85;
+    /*height: 100%;*/
+    overflow: hidden;
+}
+
+.navbar-text > a {
+	color: inherit;
+	text-decoration: none;
+}
+
+body {
+	padding-top: 70px;
+	padding-bottom: 1px;
+    max-height: 10px;
+}
+
+p {
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Oswald', sans-serif;
+    color: white;
+}
+
+.jumbotron {
+    background-color: transparent;
+}
+
+.form-control {
+    border: 1px solid #411852;    
+}
+
+.navbar-default {
+	background-color: #411852;
+	border-color: #FFFFFF;
+	color: #FFFFFF;
+    background-image: none;
+}
+
+.navbar {
+    min-height: 72px;
+}
+
+.navbar-fixed-top {
+    border-width: 0 0 0px;    
+}
+
+.navbar-header {
+	margin-top: 10px;
+}
+.navbar-inverse {
+    background-color: #411852;
+    background-image: none;
+}
+.navbar-default .navbar-brand {
+	color: #FFFFFF;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+	color: #bee7ad;
+	background-color: transparent;
+}
+
+.navbar-default .navbar-nav > li > a {
+	color: #FFFFFF;
+	margin-top: 10px;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+	color: #FFFFFF;
+	background-color: #1A242F;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+	color: #bee7ad;
+	background-color: transparent;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+	background-color: #1A242F;
+	color: #FFFFFF;
+}
+
+.btn {
+    margin-top: 13px;
+}
+
+.btn-primary {
+	background-color: #2C3E50;
+	border-color: #2C3E50;
+	color: #FFFFFF;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+	color: #FFFFFF;
+	background-color: #1E2A36;
+	border-color: #161F29; 
+}
+
+.btn-success {
+	background-color: #18BC9C;
+	border-color: #18BC9C;
+	color: #FFFFFF;
+}
+
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active,
+.btn-success.active,
+.open .dropdown-toggle.btn-success {
+	color: #FFFFFF;
+	background-color: #13987E;
+	border-color: #13987E; 
+}
+
+.btn-default {
+	background-color: #95A5A6;
+	border-color: #95A5A6;
+	color: #FFFFFF;
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active,
+.btn-default.active,
+.open .dropdown-toggle.btn-success {
+	color: #FFFFFF;
+	background-color: #7F9293;
+	border-color: #74898A;
+}
+
+.img-thumbnail {
+    height: 240px;
+    width: 150px;
+    margin: 15px;
+}
+
+.home-thumb img:hover {
+	transform: scale(1.1);
+}
+
+.thumbnail img {
+	transition: all 0.3s ease 0s;
+	width: 100%;
+}
+
+.thumbnail {
+	overflow: hidden;
+}
+
+.bg-grey {
+	background-color: #f9f9f9;
+}
+
+.carousel {
+	padding-bottom: 20px;
+}
+
+form {
+    height: 100%;
+}
+
+.panel {
+    background-color: #185241;
+    opacity: 1;
+    position: absolute;
+    top: 190px; bottom: 100px; left: 0; right: 0;
+    overflow: auto;
+}
+
+.panel-none {
+    background-color: transparent;
+    position: absolute;
+    height: 30px;
+    bottom: 97px;
+}
+
+.panel-default {
+    background-color: #185241;
+}
+
+.panel-body {
+    background-color: #185241;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+.custom-panel {
+    background-color: #185241;
+    color: #F7EEFA;
+    padding: 0;
+    margin: 0;
+}
+
+.form-control:focus {
+  border-color: #185241;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+
+.label-space {
+    background-color: #241852;
+    margin-right: 10px;    
+}
+
+.label-left-space {
+    background-color: #411852;
+    margin-left: 20px;
+}
+
+#itemContent {
+    color: white;
+}
+
+#link {
+    color: white;    
+}
+
+#link:hover {
+    color: #00bfff;
+}
+
+.nav, .pagination, .carousel, .panel-title a {
+     cursor: pointer;
+}
+
+hr {
+    display: block;
+    height: 2px;
+    border: 0;
+    border-top: 2px solid grey;
+    padding: 0;
+}
+
+
