@@ -120,6 +120,8 @@
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Test\test.html" />
+    <Content Include="Test\testStyle.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
