@@ -35,6 +35,9 @@ angular.module('appHome').factory("apiService", ['$q', '$http', function ($q, $h
                 defered.reject(error);
             });
             return defered.promise;
+        },
+        addBookToLibrary: function (book) {
+            //TODO use POST call to node api
         }
     };
 }]);
