@@ -21,6 +21,19 @@
                 defered.reject(error);
             });
             return defered.promise;
+        },
+        getMyLibrary: function () {
+            // TODO: call node api get all library objects
+        },
+        getMyLibraryTest: function () { //fall back test data
+            var defered = $q.defer();
+            $http.get("https://www.googleapis.com/books/v1/volumes?q=the&maxResults=40")
+            .success(function (response) {
+                defered.resolve(response);
+            }).error(function (error) {
+                defered.reject(error);
+            });
+            return defered.promise;
         }
     };
 }]);

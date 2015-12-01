@@ -1,5 +1,4 @@
 ﻿var app = angular.module('appHome');
-//app.controller("searchController", function ($scope, $state, $stateParams, $http) {
 app.controller("searchController", ['$scope', '$state', '$stateParams', 'apiService', function ($scope, $state, $stateParams, apiService) {
     $scope.show = false;
     var maxResultText = "&maxResults=40";

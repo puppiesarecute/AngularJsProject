@@ -1,15 +1,14 @@
-﻿angular.module('appHome').controller("homeController", function ($scope, $state, $stateParams, $http) {
+﻿angular.module('appHome').controller("homeController", ['$scope', '$state', '$stateParams', 'apiService', function ($scope, $state, $stateParams, apiService) {
 
-    //get test data, should later be replaced by api call to Node project to get all Library objects
-    $http.get("https://www.googleapis.com/books/v1/volumes?q=a%20song%20ice%20fire&maxResults=7")
-                        .success(function (newResponse) {
-                            $scope.testItems = newResponse;
-                        }).error(function (newResponse) {
-                            alert(newResponse);
-                        });
+    //TODO get test data, should later be replaced by apiService.getMyLibrary()
+    apiService.getMyLibraryTest().then(
+            function (response) {
+                $scope.allItems = response;
+            });
+
     $scope.editBookmark = function (item) {
         //alert(item.volumeInfo.title);
         $state.go("myBookshelves", { bookmarkItem: item });
         //console.log(item);
     }
-});
+}]);
