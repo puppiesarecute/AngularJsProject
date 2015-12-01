@@ -256,3 +256,28 @@ hr {
 ::-webkit-scrollbar { 
     display: none; 
 }
+
+.star-ratings-css {
+  unicode-bidi: bidi-override;
+  color: #c5c5c5;
+  font-size: 15px;
+  height: 15px;
+  width: 100px;
+  margin: 0 auto;
+  position: absolute;
+  padding: 0;
+  text-shadow: 0px 1px 0 #a2a2a2;
+}
+.star-ratings-css .star-ratings-css-top {
+  color: #e7711b;
+  padding: 0;
+  text-shadow: 0px 1px 0 #ab5414;
+  position: absolute;
+  z-index: 1;
+  display: block;
+  left: 0px;
+  overflow: hidden;
+}
+.star-ratings-css .star-ratings-css-bottom {
+  z-index: 0;
+}

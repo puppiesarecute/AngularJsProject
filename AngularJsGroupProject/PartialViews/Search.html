@@ -42,12 +42,12 @@
                         <strong>Page count:</strong> {{ item.volumeInfo.pageCount}}
                     </p>
                     <p>
-                        <strong>Average rating:</strong> {{item.volumeInfo.averageRating}}
+                        <strong>Average rating:</strong> <span stars-rating></span><!--{{item.volumeInfo.averageRating}}-->                       
                     </p>
                     <div class="btn btn-warning" ng-click="addToLibrary(item)">Add to library</div>
                 </div>
             </div>
-            <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-6 col-sm-offset-3 col-xs-6 col-sm-offset-3">
+            <div class="col-lg-10 col-lg-offset-2 col-md-10 col-md-offset-2 col-sm-9 col-sm-offset-3 col-xs-9 col-sm-offset-3">
                 <hr />
             </div>        
         </div>

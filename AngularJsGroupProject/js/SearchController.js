@@ -71,4 +71,11 @@ app.controller("searchController", function ($scope, $state, $stateParams, $http
     $scope.setPage = function (pageNo) {
         $scope.currentPage = pageNo;
     };
-    });
+});
+
+app.directive('starsRating', function () {
+    return {
+        restrict: 'AE',
+        templateUrl: '../js/directives/stars.html'
+    }
+});

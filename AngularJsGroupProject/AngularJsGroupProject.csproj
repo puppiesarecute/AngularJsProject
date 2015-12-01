@@ -73,6 +73,7 @@
     <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="css\custom.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="js\directives\stars.html" />
     <Content Include="js\HomeController.js" />
     <Content Include="js\MyBookshelvesController.js" />
     <Content Include="js\navigation.js" />
