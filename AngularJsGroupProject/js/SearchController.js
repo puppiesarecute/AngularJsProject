@@ -1,4 +1,5 @@
-﻿var app = angular.module('appHome');
+﻿//by Ai Le
+var app = angular.module('appHome');
 app.controller("searchController", ['$scope', '$state', '$stateParams', 'apiService', function ($scope, $state, $stateParams, apiService) {
     $scope.show = false;
     var maxResultText = "&maxResults=40";
@@ -42,7 +43,6 @@ app.controller("searchController", ['$scope', '$state', '$stateParams', 'apiServ
 
     // do search when enter
     $scope.submitSearch = function () {
-        debugger
         if ($scope.searchText !== undefined) { //call api and show data
             $scope.show = true;
             fetch();
@@ -69,16 +69,3 @@ app.controller("searchController", ['$scope', '$state', '$stateParams', 'apiServ
     };
 }]);
 
-//app.directive('starsRating', function () {
-//    return {
-//        restrict: 'AE',
-//        replace: true,
-//        scope: {
-//            rate: '@rateVal'
-//        },
-//        link: function (scope, elem, attr) {
-//            scope.rateTxt = "width: " + ((scope.rate * 100)/5 + 3) + "%"; // 3 is a magic number used to improve position percentage of the filled stars
-//        },
-//        templateUrl: '../js/directives/stars.html'
-//    }
-//});

@@ -1,4 +1,5 @@
-﻿angular.module('appHome').factory("apiService", ['$q','$http', function ($q, $http) {
+﻿// by Ai Le
+angular.module('appHome').factory("apiService", ['$q', '$http', function ($q, $http) {
     var googleApiUrl = "https://www.googleapis.com/books/v1/volumes?q=";
     
     return {

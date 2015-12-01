@@ -1,8 +1,9 @@
-﻿var app = angular.module('appHome');
+﻿//by Ai Le
+var app = angular.module('appHome');
 app.directive('starsRating', function () {
     return {
         restrict: 'AE',
-        replace: true,
+        replace: false,
         scope: {
             rate: '@rateVal'
         },

@@ -1,4 +1,5 @@
 ﻿
+<!--by Ai Le-->
 <form ng-submit="submitSearch()">
     <div class="container" >
         <div class="jumbotron text-center">
@@ -25,7 +26,7 @@
                 <div id="itemContent" class="col-lg-10 col-md-9 col-sm-9 col-xs-8">
                     <h4>
                         <a id="link" ng-href="{{item.volumeInfo.infoLink}}">{{item.volumeInfo.title}}</a>
-                    </h4>
+                    </h4>                    
                     <h5>{{item.volumeInfo.industryIdentifiers[0].type}}: {{item.volumeInfo.industryIdentifiers[0].identifier}}</h5>
                     <h5>{{item.volumeInfo.industryIdentifiers[1].type}}: {{item.volumeInfo.industryIdentifiers[1].identifier}}</h5>
                     <p>
@@ -40,10 +41,10 @@
                     </p>
                     <p>
                         <strong>Page count:</strong> {{ item.volumeInfo.pageCount}}
-                    </p>
-                    <p ng-model="item.volumeInfo.averageRating">
-                        <strong>Average rating:</strong><span stars-rating rate-val="{{item.volumeInfo.averageRating}}"></span>              
-                    </p>
+                    </p> 
+                    <div ng-model="item.volumeInfo.averageRating">
+                        <span stars-rating rate-val="{{item.volumeInfo.averageRating}}"></span>
+                    </div>                   
                     <div class="btn btn-warning pull-right" ng-click="addToLibrary(item)">Add to library</div>
                 </div>
             </div>
