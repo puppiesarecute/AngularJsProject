@@ -1,9 +1,9 @@
 ﻿angular.module('appHome').factory("apiService", ['$q','$http', function ($q, $http) {
     var googleApiUrl = "https://www.googleapis.com/books/v1/volumes?q=";
-    var defered = $q.defer();
+    
     return {
         findBooksByIsbn: function (parameter) {
-            
+            var defered = $q.defer();
             $http.get(googleApiUrl + "isbn:" + parameter)
             .success(function (response) {
                 defered.resolve(response);
@@ -13,7 +13,7 @@
             return defered.promise;
         },
         findBooksGeneral: function (parameter) {
-
+            var defered = $q.defer();
             $http.get(googleApiUrl + parameter)
             .success(function (response) {
                 defered.resolve(response);

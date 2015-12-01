@@ -20,7 +20,7 @@
         <div class="panel-default panel-body" ng-show="show" ng-repeat="item in searchResult.items.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
             <div>
                 <div class="col-lg-2 col-md-3 col-sm-3 col-xs-4">
-                    <img ng-src="{{item.volumeInfo.imageLinks === undefined ? 'Resources/Untitled.png' : item.volumeInfo.imageLinks.thumbnail}}" alt="book" class="img-thumbnail" />
+                    <img ng-src="{{item.volumeInfo.imageLinks.thumbnail || 'Resources/Untitled.png' }}" alt="book" class="img-thumbnail" />
                 </div>
                 <div id="itemContent" class="col-lg-10 col-md-9 col-sm-9 col-xs-8">
                     <h4>
@@ -29,7 +29,7 @@
                     <h5>{{item.volumeInfo.industryIdentifiers[0].type}}: {{item.volumeInfo.industryIdentifiers[0].identifier}}</h5>
                     <h5>{{item.volumeInfo.industryIdentifiers[1].type}}: {{item.volumeInfo.industryIdentifiers[1].identifier}}</h5>
                     <p>
-                        <strong>Subtitle:</strong> {{ item.volumeInfo.subtitle === undefined ? item.volumeInfo.title : item.volumeInfo.subtitle }} by <span class="label label-success label-space" ng-repeat="author in item.volumeInfo.authors"> {{author}}&nbsp;&nbsp;</span>
+                        <strong>Subtitle:</strong> {{ item.volumeInfo.subtitle || item.volumeInfo.title}} by <span class="label label-success label-space" ng-repeat="author in item.volumeInfo.authors"> {{author}}&nbsp;&nbsp;</span>
                     </p>
                     <p>
                         <strong>Publish:</strong> {{ item.volumeInfo.publisher }}, {{ item.volumeInfo.publishedDate }}

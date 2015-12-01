@@ -43,6 +43,7 @@ app.controller("searchController", ['$scope', '$state', '$stateParams', 'apiServ
 
     // do search when enter
     $scope.submitSearch = function () {
+        debugger
         if ($scope.searchText !== undefined) { //call api and show data
             $scope.show = true;
             fetch();
