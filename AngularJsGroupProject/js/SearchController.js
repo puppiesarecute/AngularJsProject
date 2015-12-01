@@ -1,47 +1,42 @@
 ﻿var app = angular.module('appHome');
-app.controller("searchController", function ($scope, $state, $stateParams, $http) {
+//app.controller("searchController", function ($scope, $state, $stateParams, $http) {
+app.controller("searchController", ['$scope', '$state', '$stateParams', 'apiService', function ($scope, $state, $stateParams, apiService) {
     $scope.show = false;
     var maxResultText = "&maxResults=40";
     
     function generalSearch(text) {
-        $http.get("https://www.googleapis.com/books/v1/volumes?q=" + text + maxResultText)
-                        .success(function (newResponse) {
-                            $scope.searchResult = newResponse;
-                            console.log(newResponse);
-                            // display result if the call yields more than 1 result
-                            if ($scope.searchResult.totalItems !== 0) {
-                                $scope.show = true;
-                            } else {
-                                $scope.show = false;
-                            }
-                        }).error(function (newResponse) {
-                            alert(newResponse);
-                        });
+        apiService.findBooksGeneral(text).then(
+            function (newResponse) {
+                $scope.searchResult = newResponse;
+                //display result if the call yields more than 1 result
+                if ($scope.searchResult.totalItems !== 0) {
+                    $scope.show = true;
+                } else {
+                    $scope.show = false;
+                }
+            });
     };
 
     function fetch() {
         // first check if the search term is an isbn no, then call the specific api with isbn value
-        var searchTerm = $scope.searchText;
-        var isIsbn = /^\d+$/.test(searchTerm);
+        var searchTerm = $scope.searchText + maxResultText;
+        var isIsbn = /^\d+$/.test($scope.searchText);
         $scope.display = true;
 
         if (isIsbn) {
-            $http.get("https://www.googleapis.com/books/v1/volumes?q=isbn:" + searchTerm + maxResultText)
-            .success(function (response) {
-                $scope.searchResult = response;
-
-                // display result if the call yields more than 1 result
-                if ($scope.searchResult.totalItems !== 0) {
-                    $scope.show = true;
-                } else {
-                    // if there is no result in response, try general search
-                    generalSearch(searchTerm);
-                }
-
-            }).error(function (response) {
-                alert(response);
-            });
-        } else {
+            apiService.findBooksByIsbn(searchTerm).then(
+                function (response) {
+                    $scope.searchResult = response;
+                    // display result if the call yields more than 1 result
+                    if ($scope.searchResult.totalItems !== 0) {
+                        $scope.show = true;
+                    } else {
+                        // if there is no result in response, try general search
+                        generalSearch(searchTerm);
+                    }
+                });
+        }
+        else {
             generalSearch(searchTerm);
         }
     };
@@ -72,7 +67,7 @@ app.controller("searchController", function ($scope, $state, $stateParams, $http
     $scope.setPage = function (pageNo) {
         $scope.currentPage = pageNo;
     };
-});
+}]);
 
 //app.directive('starsRating', function () {
 //    return {
