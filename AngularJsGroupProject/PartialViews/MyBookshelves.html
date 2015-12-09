@@ -11,13 +11,13 @@
         <div class="form-group">
             <div>
                 <label>When did you finish the book?</label>
-                <input type="date" class="form-control">
+                <input type="date" class="form-control" ng-model="date" name="title">
             </div>
         </div>
         <div class="form-group">
             <div>
                 <label>How do you rate it?</label>
-                <!--<input type="text" class="form-control"/>-->
+                <input type="text" ng-model="myRating" class="form-control" /> 
                 <div class="starRating">
                     <input id="rating5" type="radio" value="5" name="rating">
                     <label for="rating5">5</label>
@@ -35,7 +35,7 @@
         <div class="form-group">
             <div>
                 <label>Notes about the book: </label>
-                <textarea class="form-control" rows="4"></textarea>
+                <textarea class="form-control" ng-model="note" rows="4"></textarea>
             </div>
         </div> 
         <div class="col-xs-12">

@@ -59,6 +59,7 @@ app.controller("searchController", ['$scope', '$state', '$stateParams', 'apiServ
         //        console.log("this item will be post to library: " + item);
         //    });                
         console.log("This item will be POST to library: " + item.volumeInfo.title);
+        $state.go("home");
     };
 
     // pagination
