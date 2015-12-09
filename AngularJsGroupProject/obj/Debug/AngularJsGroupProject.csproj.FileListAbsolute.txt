@@ -38,3 +38,23 @@ C:\Users\Ai\Documents\Visual Studio 2015\Projects\Angular-Node-Project\AngularJs
 C:\Users\Ai\Documents\Visual Studio 2015\Projects\Angular-Node-Project\AngularJsGroupProject\obj\Debug\AngularJsGroupProject.dll
 C:\Users\Ai\Documents\Visual Studio 2015\Projects\Angular-Node-Project\AngularJsGroupProject\obj\Debug\AngularJsGroupProject.pdb
 C:\Users\Ai\Documents\Visual Studio 2015\Projects\Angular-Node-Project\AngularJsGroupProject\obj\Debug\AngularJsGroupProject.csprojResolveAssemblyReference.cache
+C:\Users\Andreea\Documents\Repo-Projects\AngularJsProject\AngularJsGroupProject\bin\roslyn\csc.exe
+C:\Users\Andreea\Documents\Repo-Projects\AngularJsProject\AngularJsGroupProject\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Andreea\Documents\Repo-Projects\AngularJsProject\AngularJsGroupProject\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Andreea\Documents\Repo-Projects\AngularJsProject\AngularJsGroupProject\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Andreea\Documents\Repo-Projects\AngularJsProject\AngularJsGroupProject\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Andreea\Documents\Repo-Projects\AngularJsProject\AngularJsGroupProject\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Andreea\Documents\Repo-Projects\AngularJsProject\AngularJsGroupProject\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Andreea\Documents\Repo-Projects\AngularJsProject\AngularJsGroupProject\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Andreea\Documents\Repo-Projects\AngularJsProject\AngularJsGroupProject\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Andreea\Documents\Repo-Projects\AngularJsProject\AngularJsGroupProject\bin\roslyn\vbc.exe
+C:\Users\Andreea\Documents\Repo-Projects\AngularJsProject\AngularJsGroupProject\bin\roslyn\VBCSCompiler.exe
+C:\Users\Andreea\Documents\Repo-Projects\AngularJsProject\AngularJsGroupProject\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Andreea\Documents\Repo-Projects\AngularJsProject\AngularJsGroupProject\bin\AngularJsGroupProject.dll.config
+C:\Users\Andreea\Documents\Repo-Projects\AngularJsProject\AngularJsGroupProject\bin\AngularJsGroupProject.dll
+C:\Users\Andreea\Documents\Repo-Projects\AngularJsProject\AngularJsGroupProject\bin\AngularJsGroupProject.pdb
+C:\Users\Andreea\Documents\Repo-Projects\AngularJsProject\AngularJsGroupProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Andreea\Documents\Repo-Projects\AngularJsProject\AngularJsGroupProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Andreea\Documents\Repo-Projects\AngularJsProject\AngularJsGroupProject\obj\Debug\AngularJsGroupProject.csprojResolveAssemblyReference.cache
+C:\Users\Andreea\Documents\Repo-Projects\AngularJsProject\AngularJsGroupProject\obj\Debug\AngularJsGroupProject.dll
+C:\Users\Andreea\Documents\Repo-Projects\AngularJsProject\AngularJsGroupProject\obj\Debug\AngularJsGroupProject.pdb

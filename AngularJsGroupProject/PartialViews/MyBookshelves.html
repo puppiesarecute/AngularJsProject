@@ -1,18 +1,35 @@
-﻿<!--by Ai Le-->
+﻿<!--by Ai Le, Dana-->
 <div class="panel panel-default col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1" ng-model="item">
     <!--<h1>This is where you can take note about a book you have read - data will be saved by POST to node api</h1>-->
     <h1>{{item.volumeInfo.title}}</h1>
+    <h6>
+        By <span class="" ng-repeat="auths in item.volumeInfo.authors">{{auths}} </span>,
+        {{item.volumeInfo.industryIdentifiers[0].type}}: {{item.volumeInfo.industryIdentifiers[0].identifier}},
+        {{item.volumeInfo.industryIdentifiers[1].type}}: {{item.volumeInfo.industryIdentifiers[1].identifier}}
+    </h6>
     <form novalidate name="bookMarkForm" ng-submit="saveBookmark()">
         <div class="form-group">
             <div>
                 <label>When did you finish the book?</label>
-                <input type="text" class="form-control" ng-model="item.volumeInfo.title" name="title">
+                <input type="date" class="form-control">
             </div>
         </div>
         <div class="form-group">
             <div>
                 <label>How do you rate it?</label>
-                <input type="text" class="form-control" />                
+                <!--<input type="text" class="form-control"/>-->
+                <div class="starRating">
+                    <input id="rating5" type="radio" value="5" name="rating">
+                    <label for="rating5">5</label>
+                    <input id="rating4" type="radio" value="4" name="rating">
+                    <label for="rating4">4</label>
+                    <input id="rating3" type="radio"  value="3" name="rating">
+                    <label for="rating3">3</label>
+                    <input id="rating2" type="radio" value="2" name="rating">
+                    <label for="rating2">2</label>
+                    <input id="rating1" type="radio" value="1" name="rating">
+                    <label for="rating1">1</label>
+                </div>
             </div>
         </div>  
         <div class="form-group">
@@ -22,7 +39,7 @@
             </div>
         </div> 
         <div class="col-xs-12">
-            <button type="submit" class="btn btn-primary pull-right">Save</button>
+            <button type="submit" class="btn btn-primary pull-right" ng-click="saveBookmark(item)">Save</button>
         </div>
     </form>
 </div>

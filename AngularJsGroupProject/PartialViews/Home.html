@@ -1,9 +1,34 @@
 ﻿<!--by Ai Le-->
+
 <div class="panel panel-default col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
     <h1>My Library</h1>
-    <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" ng-repeat="item in allItems.items">
+
+    <div class="form-group has-feedback has-feedback-left">
+        <input type="text" class="form-control" placeholder="Search by ISBN number, Book title, Author, Category" ng-model="searchText" name="searchText">
+        <i class="form-control-feedback glyphicon glyphicon-search"></i>
+</div>
+
+    <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" ng-repeat="item in allItems.items | filter:searchText">
         <div uib-tooltip="{{item.volumeInfo.title}}" tooltip-placement="bottom">
-            <a href="#"><img class="img-thumbnail" ng-src="{{item.volumeInfo.imageLinks.smallThumbnail || 'Resources/Untitled.png'}}" alt="book" /></a>            
+            <a href="#" ng-click="editBookmark(item)">
+                <img class="img-thumbnail" ng-src="{{item.volumeInfo.imageLinks.smallThumbnail || 'Resources/Untitled.png'}}" alt="{{item.volumeInfo.title}}"/>
+            </a>
+            <div class="starRating starsHome-personal">
+                <input id="rating5" type="radio" value="5" name="rating">
+                <label for="rating5">5</label>
+                <input id="rating4" type="radio" value="4" name="rating">
+                <label for="rating4">4</label>
+                <input id="rating3" type="radio" value="3" name="rating">
+                <label for="rating3">3</label>
+                <input id="rating2" type="radio" value="2" name="rating">
+                <label for="rating2">2</label>
+                <input id="rating1" type="radio" value="1" name="rating">
+                <label for="rating1">1</label>
+            </div>
+            <!-- Stars from google -->
+            <!--<div class="starsHome" ng-model="item.volumeInfo.averageRating">
+                <span stars-rating rate-val="{{item.volumeInfo.averageRating}}"></span>
+            </div>-->  
         </div>
         <div class="btn btn-warning" id="addBookmark" ng-click="editBookmark(item)">Edit bookmark</div>
     </div>

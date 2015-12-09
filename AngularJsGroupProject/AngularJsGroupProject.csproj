@@ -81,6 +81,7 @@
     <Content Include="js\SearchController.js" />
     <Content Include="js\services\apiService.js" />
     <Content Include="packages.config" />
+    <Content Include="PartialViews\Contact.html" />
     <Content Include="PartialViews\Home.html" />
     <Content Include="PartialViews\MyBookshelves.html" />
     <Content Include="PartialViews\Search.html" />

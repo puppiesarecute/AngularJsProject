@@ -63,7 +63,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-	color: #bee7ad;
+	color: rgb(188, 152, 193)
 	background-color: transparent;
 }
 
@@ -81,7 +81,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-	color: #bee7ad;
+	color: rgb(188, 152, 193);
 	background-color: transparent;
 }
 
@@ -176,7 +176,7 @@ form {
 }
 
 .panel {
-    background-color: #185241;
+    background-color: rgba(34,35,35,0.5);
     opacity: 1;
     position: absolute;
     top: 190px; bottom: 100px; left: 0; right: 0;
@@ -191,7 +191,8 @@ form {
 }
 
 .panel-default {
-    background-color: #185241;
+    background-color: rgba(34,35,35,0.5);
+    top: 110px;
 }
 
 .panel-body {
@@ -214,6 +215,10 @@ form {
           box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
 }
 
+label {
+    color: #D7B3E6;
+}
+
 .label-space {
     background-color: #241852;
     margin-right: 10px;    
@@ -233,7 +238,7 @@ form {
 }
 
 #link:hover {
-    color: #00bfff;
+    color:#D7B3E6;
 }
 
 .nav, .pagination, .carousel, .panel-title a {
@@ -282,3 +287,59 @@ hr {
 .star-ratings-css .star-ratings-css-bottom {
   z-index: 0;
 }
+
+.starsHome {
+    display: block;
+    height: 40px;
+    padding-left: 35px;
+    margin-top: -15px
+}
+
+.starsHome-personal {
+    display: block;
+    height: 40px;
+    margin-left: 35px;
+    margin-top: -15px
+}
+
+/*stars in library*/
+
+
+
+.starRating:not(old){
+  width          : 7.5em;
+  height         : 1.5em;
+  overflow       : hidden;
+  vertical-align : bottom;
+}
+
+.starRating:not(old) > input{
+  margin-right : -100%;
+  opacity      : 0;
+}
+
+.starRating:not(old) > label{
+  display         : block;
+  float           : right;
+  position        : relative;
+  background      : url('../Resources/star-off.svg');
+  background-size : contain;
+}
+
+.starRating:not(old) > label:before{
+  content         : '';
+  display         : block;
+  width           : 1.5em;
+  height          : 1.5em;
+  background      : url('../Resources/star-on.svg');
+  background-size : contain;
+  opacity         : 0;
+  transition      : opacity 0.2s linear;
+}
+
+.starRating:not(old) > label:hover:before,
+.starRating:not(old) > label:hover ~ label:before,
+.starRating:not(:hover) > :checked ~ label:before{
+  opacity : 1;
+}
+

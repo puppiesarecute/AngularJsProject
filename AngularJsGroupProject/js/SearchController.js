@@ -54,9 +54,9 @@ app.controller("searchController", ['$scope', '$state', '$stateParams', 'apiServ
     // add to library function
     $scope.addToLibrary = function (item) {
         //// TODO: try sth like this when the apiService.addBookToLibrary(item) method is available
-        //apiService.addBookToLibrary(item).then(
+        //apiService.addbooktolibrary(item).then(
         //    function (response) {
-        //        console.log("This item will be POST to library: " + item);
+        //        console.log("this item will be post to library: " + item);
         //    });                
         console.log("This item will be POST to library: " + item.volumeInfo.title);
     };

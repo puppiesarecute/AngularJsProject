@@ -1,4 +1,4 @@
-﻿//by Ai Le
+﻿//by Ai Le, Dana
 var bookApp = angular.module('appHome', ['ui.bootstrap', 'ui.router']);
 bookApp.config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("search");
@@ -12,6 +12,10 @@ bookApp.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: "PartialViews/MyBookshelves.html",
             controller: "myBookShelvesController",
             params: { bookmarkItem: null }
+        }).
+        state("contact", {
+            url: "/contact",
+            templateUrl: "PartialViews/Contact.html"
         }).
         state("search", {
             url: "/search",
