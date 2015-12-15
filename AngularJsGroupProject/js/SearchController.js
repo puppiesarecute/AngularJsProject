@@ -1,10 +1,12 @@
-﻿//by Ai Le
+﻿//by Ai Le & Dana
 var app = angular.module('appHome');
-app.controller("searchController", ['$scope', '$state', '$stateParams', 'apiService', function ($scope, $state, $stateParams, apiService) {
+app.controller("searchController", ['$scope', '$state', '$stateParams', '$http', 'apiService',
+    function ($scope, $state, $stateParams, $http, apiService) {
     $scope.show = false;
     var maxResultText = "&maxResults=40";
     
     function generalSearch(text) {
+        //calling the apiService
         apiService.findBooksGeneral(text).then(
             function (newResponse) {
                 $scope.searchResult = newResponse;
@@ -52,13 +54,31 @@ app.controller("searchController", ['$scope', '$state', '$stateParams', 'apiServ
     };
 
     // add to library function
-    $scope.addToLibrary = function (item) {
-        //// TODO: try sth like this when the apiService.addBookToLibrary(item) method is available
-        //apiService.addbooktolibrary(item).then(
-        //    function (response) {
-        //        console.log("this item will be post to library: " + item);
-        //    });                
-        console.log("This item will be POST to library: " + item.volumeInfo.title);
+    $scope.addToLibrary = function (item) {            
+        var book = {
+            title: item.volumeInfo.title,
+            isbn_10: item.volumeInfo.industryIdentifiers[0].identifier,
+            isbn_13: item.volumeInfo.industryIdentifiers[1].identifier,
+            subtitle: item.volumeInfo.subtitle,
+            publisher: item.volumeInfo.publisher,
+            publishedDate: item.volumeInfo.publishedDate,
+            description: item.volumeInfo.description,
+            pageCount: item.volumeInfo.pageCount,
+            averageRating: item.volumeInfo.averageRating,
+            finishedDate: "",
+            personalRate: 0,
+            notes: "",
+            authors: item.volumeInfo.authors,
+            categories: item.volumeInfo.categories,
+            price: 250,
+            img: item.volumeInfo.imageLinks.thumbnail,
+            quantity: 1
+            
+        };
+        console.log("adding = "+ JSON.stringify(book));
+        $http.post("http://bindersystem.azurewebsites.net/api/books/", book).success(function(book, status) {
+        $scope.hello = book;
+        });
         $state.go("home");
     };
 
@@ -69,7 +89,7 @@ app.controller("searchController", ['$scope', '$state', '$stateParams', 'apiServ
     $scope.itemsPerPage = $scope.viewby;
     $scope.maxSize = 4;
     $scope.setPage = function (pageNo) {
-        $scope.currentPage = pageNo;
+    $scope.currentPage = pageNo;
     };
 }]);
 

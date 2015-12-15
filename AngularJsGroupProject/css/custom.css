@@ -288,6 +288,7 @@ hr {
   z-index: 0;
 }
 
+/*stars in library By Dana*/
 .starsHome {
     display: block;
     height: 40px;
@@ -301,9 +302,6 @@ hr {
     margin-left: 35px;
     margin-top: -15px
 }
-
-/*stars in library*/
-
 
 
 .starRating:not(old){
@@ -342,4 +340,6 @@ hr {
 .starRating:not(:hover) > :checked ~ label:before{
   opacity : 1;
 }
+
+/*more responsive stars*/
 

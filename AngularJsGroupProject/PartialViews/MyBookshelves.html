@@ -1,17 +1,17 @@
 ﻿<!--by Ai Le, Dana-->
 <div class="panel panel-default col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1" ng-model="item">
     <!--<h1>This is where you can take note about a book you have read - data will be saved by POST to node api</h1>-->
-    <h1>{{item.volumeInfo.title}}</h1>
+    <h1>{{item.title}}</h1>
     <h6>
-        By <span class="" ng-repeat="auths in item.volumeInfo.authors">{{auths}} </span>,
-        {{item.volumeInfo.industryIdentifiers[0].type}}: {{item.volumeInfo.industryIdentifiers[0].identifier}},
-        {{item.volumeInfo.industryIdentifiers[1].type}}: {{item.volumeInfo.industryIdentifiers[1].identifier}}
+        By <span class="" ng-repeat="auths in item.authors">{{auths}} </span>,
+        ISBN 10: {{item.isbn_10}},
+        ISBN 13: {{item.isbn_13}}
     </h6>
     <form novalidate name="bookMarkForm" ng-submit="saveBookmark()">
         <div class="form-group">
             <div>
                 <label>When did you finish the book?</label>
-                <input type="date" class="form-control" ng-model="date" name="title">
+                <input type="date" class="form-control" ng-model="date" name="date" value="{{item.finishedDate ||  1990}}-01-01">
             </div>
         </div>
         <div class="form-group">
@@ -22,7 +22,7 @@
                     <label for="rating5">5</label>
                     <input id="rating4" type="radio" value="4" name="rating">
                     <label for="rating4">4</label>
-                    <input id="rating3" type="radio"  value="3" name="rating">
+                    <input id="rating3" type="radio" value="3" name="rating">
                     <label for="rating3">3</label>
                     <input id="rating2" type="radio" value="2" name="rating">
                     <label for="rating2">2</label>
@@ -30,15 +30,21 @@
                     <label for="rating1">1</label>
                 </div>
             </div>
-        </div>  
+        </div>
         <div class="form-group">
             <div>
                 <label>Notes about the book: </label>
-                <textarea class="form-control" ng-model="note" rows="8"></textarea>
+                <textarea class="form-control" ng-model="note" rows="8">{{item.notes}}</textarea>
             </div>
-        </div> 
+        </div>
         <div class="col-xs-12">
             <button type="submit" class="btn btn-primary pull-right" ng-click="saveBookmark(item)">Save</button>
         </div>
     </form>
 </div>
+
+<script>
+    function checkStars(no) {
+        document.getElementById("rating" + no).setAttribute("checked", "");
+    }
+</script>

@@ -1,4 +1,5 @@
 ﻿//by Ai Le, Dana
+//configure then routing
 var bookApp = angular.module('appHome', ['ui.bootstrap', 'ui.router']);
 bookApp.config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("search");
